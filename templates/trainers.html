@@ -1,0 +1,53 @@
+{% extends "includes/navbar.html" %}
+<body>
+    <div align="center">
+        <p>Choose your club:</p>
+    </div>
+    <div align="center">
+        <form>
+            <select id="mallSelector" onchange="showTrainers()">
+                <option value="--choose--">--choose--</option>
+                <option value="ankamall">Ankamall AVM</option>
+                <option value="kentpark">Kentpark AVM</option>
+                <option value="cepa">Cepa AVM</option>
+                <option value="armada">Armada AVM</option>
+                <option value="metromall">Metromall AVM</option>
+            </select>
+        </form>
+    </div>
+    <script>
+        // Trainer verilerini içeren bir nesne oluştur
+        const trainersData = {
+            ankamall: ["Trainer1", "Trainer2", "Trainer3"],
+            kentpark: ["TrainerA", "TrainerB", "TrainerC"],
+            cepa: ["TrainerX", "TrainerY", "TrainerZ"],
+            armada: ["TrainerI", "TrainerII", "TrainerIII"],
+            metromall: ["TrainerAlpha", "TrainerBeta", "TrainerGamma"]
+        };
+
+        function showTrainers() {
+            const mallSelector = document.getElementById("mallSelector");
+            const selectedMall = mallSelector.value;
+            const trainersListContainer = document.getElementById("trainersList");
+
+            // Temizle önceki içeriği
+            trainersListContainer.innerHTML = "";
+
+            // Seçili AVM'ye göre Trainer'ları göster
+            const trainersForMall = trainersData[selectedMall] || [];
+
+            if (trainersForMall.length > 0) {
+                const trainersList = document.createElement("ul");
+                trainersForMall.forEach(trainer => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = trainer;
+                    trainersList.appendChild(listItem);
+                });
+                trainersListContainer.appendChild(trainersList);
+            } else {
+                trainersListContainer.textContent = "Couldn't find a trainer list for the chosen club.";
+            }
+        }
+    </script>
+</body>
+</html>
