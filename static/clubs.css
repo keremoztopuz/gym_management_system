@@ -1,0 +1,74 @@
+.clubs-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    margin-top: 20px;
+    max-width: 300px;
+    max-height: 300px;
+    gap: 15px;
+}
+
+.club-caption {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 12px;
+    position: relative;
+    right: 170px;
+}
+
+.club {
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.club-photo {
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 10px;
+    position: relative;
+    right: 200px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: default;
+}
+
+.clubs-container::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}

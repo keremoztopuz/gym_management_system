@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="auth-container" style="max-width: 600px;">
+    <h2 class="auth-title">Edit Profile</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" id="first_name" name="first_name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" id="last_name" name="last_name" class="form-control" required>
+        </div>
+
+        {% extends "layout.html" %}
+
+        {% block body %}
+
+        <div class="auth-container" style="max-width: 600px;">
+            <h2 class="auth-title">Edit Profile</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" id="first_name" name="first_name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Update Profile</button>
+            </form>
+            <div class="auth-container" style="max-width: 800px; margin-top: 2rem;">
+                <h2 class="section-title" style="margin-bottom: 2rem;">Your Progress Dashboard</h2>
+
+                <!-- Stats Grid -->
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                        <h3 style="color: var(--text-muted); font-size: 1rem;">Current Weight</h3>
+                        <p style="font-size: 2rem; color: var(--primary-color); font-weight: bold; margin: 0.5rem 0;">70
+                            kg</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                        <h3 style="color: var(--text-muted); font-size: 1rem;">Workouts This Month</h3>
+                        <p style="font-size: 2rem; color: var(--primary-color); font-weight: bold; margin: 0.5rem 0;">12
+                        </p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                        <h3 style="color: var(--text-muted); font-size: 1rem;">Goal Weight</h3>
+                        <p style="font-size: 2rem; color: var(--primary-color); font-weight: bold; margin: 0.5rem 0;">65
+                            kg</p>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <canvas id="weightChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        {% endblock body %}

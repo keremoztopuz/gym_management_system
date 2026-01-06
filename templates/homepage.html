@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Unleash Your Potential</h1>
+        <p>Work with the best in the industry to achieve your fitness goals.</p>
+        <a href="/trainers" class="btn btn-outline" style="margin-top: 1rem;">Meet Trainers</a>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3>Premium Clubs</h3>
+        <p>Access multiple locations with top-tier facilities and amenities.</p>
+        <a href="/clubs" class="btn btn-outline" style="margin-top: 1rem;">Find a Club</a>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🧘</div>
+        <h3>Group Lessons</h3>
+        <p>Join our energetic group classes from Yoga to HIIT.</p>
+        <a href="/grouplessons" class="btn btn-outline" style="margin-top: 1rem;">View Schedule</a>
+    </div>
+    </div>
+</section>
+
+<!-- Latest Articles (Moved from Sidebar) -->
+<section class="latest-articles" style="margin-bottom: 4rem;">
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="features-grid">
+        {% for article in articles_data %}
+        <div class="feature-card" style="text-align: left;">
+            <h4 style="color: var(--primary-color);">{{ article[1] }}</h4>
+            <p style="margin-bottom: 1rem;">{{ article[2] }}</p>
+            <a href="#" style="color: var(--text-muted); font-size: 0.9rem;">Read More &rarr;</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock body %}

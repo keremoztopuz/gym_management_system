@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% from "includes/formhelpers.html" import render_field %}
+
+<div class="auth-container">
+    <h2 class="auth-title">Login</h2>
+
+    <form method="POST">
+        {{ render_field(form.email, class="form-control", placeholder="Email") }}
+        {{ render_field(form.password, class="form-control", placeholder="Password") }}
+
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Login</button>
+    </form>
+
+    <div class="auth-footer">
+        Don't have an account? <a href="/register">Register here</a>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,41 @@
+body {
+    display: block;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.1);
+    right: 100px;
+    
+}
+
+header {
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    right: 500px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section{
+    max-width: 550px;
+    position: absolute;
+    top: 300px;
+    right: 390px;
+    text-align: center;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; /* background is on back*/
+}

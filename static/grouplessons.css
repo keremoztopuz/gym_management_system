@@ -1,0 +1,22 @@
+
+/* Resimleri yan yana eklemek için container'ı stilize et */
+.image-container {
+    text-align: center;
+}
+
+/* Resimleri düzenle */
+.image-container div {
+    display: inline-block;
+    margin: 10px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+}
+
+/* Etiketleri düzenle */
+.image-container p {
+    text-align: center;
+}
+
+/* Formu stilize et */
+#clubSelection {
+    text-align: center;
+    margin-top: 20px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+}

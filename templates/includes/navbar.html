@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <div class="container">
+        <a class="nav-brand" href="/">GYM</a>
+
+        <div class="nav-links">
+            <a class="nav-link" href="/clubs">Clubs</a>
+            <a class="nav-link" href="/grouplessons">Group Lessons</a>
+            <a class="nav-link" href="/trainers">Trainers</a>
+        </div>
+
+        <div class="nav-actions">
+            <div class="dropdown">
+                <a class="nav-link" href="#" style="display: flex; align-items: center; gap: 5px;">
+                    Profile <span style="font-size: 0.8em;">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    {% if session['logged_in'] %}
+                    <a class="dropdown-item" href="/edit-profile">Edit Profile</a>
+                    <a class="dropdown-item" href="/privacy">Privacy</a>
+                    <a class="dropdown-item" href="/logout">Log out</a>
+                    {% else %}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    {% endif %}
+                    <a class="dropdown-item" href="/register">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

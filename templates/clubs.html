@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='clubs.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<h2 class="section-title">Find a Club Near You</h2>
+
+<div class="features-grid">
+    <div class="feature-card city-card" data-city="istanbul" style="cursor: pointer;">
+        <div class="feature-icon">🌉</div>
+        <h3>Istanbul</h3>
+        <p>View Clubs</p>
+    </div>
+    <div class="feature-card city-card" data-city="ankara" style="cursor: pointer;">
+        <div class="feature-icon">🏛️</div>
+        <h3>Ankara</h3>
+        <p>View Clubs</p>
+    </div>
+    <div class="feature-card city-card" data-city="izmir" style="cursor: pointer;">
+        <div class="feature-icon">🌊</div>
+        <h3>Izmir</h3>
+        <p>View Clubs</p>
+    </div>
+</div>
+
+<div id="cityClubs" style="margin-top: 4rem;"></div>
+
+<!-- Map Container -->
+<div id="clubsMap"
+    style="height: 400px; width: 100%; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1); display: none;">
+</div>
+
+<!-- Club Details Section -->
+<div id="clubDetails" class="club-details-section" style="display: none;"></div>
+
+{% endblock body %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% from "includes/formhelpers.html" import render_field %}
+
+<div class="auth-container" style="max-width: 500px;">
+    <h2 class="auth-title">Register</h2>
+
+    <form method="POST">
+        {{ render_field(form.name, class="form-control", placeholder="Full Name") }}
+        {{ render_field(form.username, class="form-control", placeholder="Username") }}
+        {{ render_field(form.email, class="form-control", placeholder="Email") }}
+        {{ render_field(form.password, class="form-control", placeholder="Password") }}
+        {{ render_field(form.confirm, class="form-control", placeholder="Confirm Password") }}
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            {{ render_field(form.weight, class="form-control", placeholder="Weight (kg)")}}
+            {{ render_field(form.height, class="form-control", placeholder="Height (cm)")}}
+        </div>
+
+        {{ render_field(form.location, class="form-control", placeholder="Location")}}
+
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Register</button>
+    </form>
+
+    <div class="auth-footer">
+        Already have an account? <a href="/login">Login here</a>
+    </div>
+</div>
+
+{% endblock body %}
